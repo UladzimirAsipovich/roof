@@ -1,0 +1,700 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&display=swap");
+
+:root {
+  --white: #fff;
+  --text-dark: #1c1c1c;
+  --text-hover-light: hsl(0, 0%, 31%);
+
+  --orange-bg-main: #f38120;
+  --orange-hover-dark: hsl(28, 90%, 50%);
+
+  --green-bg-main: #12c868;
+  --green-bg-main-75: hsla(148, 83%, 43%, 0.749);
+  --green-bg-main-50: hsla(148, 83%, 43%, 0.502);
+  --green-bg-main-25: hsla(148, 83%, 43%, 0.251);
+
+  --green-hover-dark: hsl(148, 83%, 33%);
+
+  --viber-bg-main: #976fcc;
+  --viber-hover-dark: hsl(266, 48%, 52%);
+  --whatsapp-bg-main: #12c868;
+  --whatsapp-hover-dark: hsl(148, 83%, 33%);
+  --telegram-main: #05a0eb;
+  --telegram-hover-dark: hsl(200, 96%, 37%);
+}
+
+/* Общие стили Document */
+
+/* Убрать базовый браузерный скроллбар в Chrome*/
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  color: var(--text-dark);
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Общие стили Layout */
+
+.layout-bg {
+  background: url("../images/bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: calc(100vw * (9 / 16));
+  position: relative;
+}
+
+main {
+  width: 81.5vw;
+  margin: 0 auto;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* root-navigation */
+
+.root-navigation ul {
+  height: 5.2vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 0.05vw solid hsla(0, 0%, 11%, 0.3);
+  position: relative;
+  z-index: 1;
+}
+
+.root-navigation .home-style svg path {
+  transition: fill 250ms ease;
+}
+
+.root-navigation .home-style svg path:hover {
+  fill: var(--orange-hover-dark);
+}
+
+.root-navigation .home-style:hover {
+  border-bottom: 0.1vw solid transparent;
+}
+
+.root-navigation ul a {
+  display: block;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.76vw;
+  font-weight: 500;
+  letter-spacing: 0.05vw;
+  color: var(--text-dark);
+  border-bottom: 0.1vw solid var(--white);
+  transition: color, border-bottom-color 250ms ease;
+}
+
+.root-navigation ul a:hover {
+  color: var(--text-hover-light);
+  border-bottom: 0.1vw solid var(--orange-bg-main);
+}
+
+.root-navigation ul a svg {
+  width: 1.25vw;
+  height: 1.25vw;
+}
+
+/* Header-content */
+
+.header-content {
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.63vw;
+  align-items: center;
+}
+
+.header-content .logos {
+  position: relative;
+  text-align: center;
+  margin: 0 -2vw;
+}
+
+.header-content .logos img:first-child {
+  width: 20vw;
+  margin-top: -1.4vw;
+  margin-bottom: -4vw;
+}
+
+.header-content .logos img:last-child {
+  position: absolute;
+  top: 15%;
+  left: 25%;
+  width: 10vw;
+}
+
+.header-content .icon-pdf {
+  width: 2.25vw;
+  height: 2.25vw;
+  box-shadow: 0 0 1vw hsl(0, 0%, 92%);
+  border-radius: 100%;
+  text-align: center;
+  display: inline-block;
+  margin-right: 1vw;
+  color: var(--green-bg-main);
+  font-weight: 600;
+}
+
+.header-content .icon-pdf span {
+  line-height: 2.25vw;
+}
+
+.header-content .icon-pdf + a {
+  text-decoration: none;
+  color: var(--text-dark);
+  border-bottom: 0.15vw dotted var(--green-bg-main);
+  letter-spacing: 0.01vw;
+  transition: color border-bottom-color 250ms ease;
+}
+
+.header-content .icon-pdf + a:hover {
+  color: var(--text-hover-light);
+  border-bottom: 0.15vw dotted var(--green-hover-dark);
+}
+
+.online-calls .head {
+  position: relative;
+}
+
+.online-calls .head::before {
+  display: block;
+  width: 0.25vw;
+  height: 0.25vw;
+  border-radius: 100%;
+  background-color: var(--green-bg-main);
+  position: absolute;
+  content: "";
+  top: 0.26vw;
+  left: -0.5vw;
+}
+
+.online-calls ul {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1vw;
+}
+
+.online-calls ul li {
+  width: 2.25vw;
+  height: 2.25vw;
+  border-radius: 100%;
+  text-align: center;
+  margin-right: 1vw;
+  color: var(--green-bg-main);
+  position: relative;
+  overflow: hidden;
+  transition: background-color 250ms ease;
+}
+
+.online-calls ul li:nth-child(1) {
+  background-color: var(--viber-bg-main);
+}
+
+.online-calls ul li:nth-child(1):hover {
+  background-color: var(--viber-hover-dark);
+}
+
+.online-calls ul li:nth-child(2) {
+  background-color: var(--whatsapp-bg-main);
+}
+
+.online-calls ul li:nth-child(2):hover {
+  background-color: var(--whatsapp-hover-dark);
+}
+
+.online-calls ul li:nth-child(3) {
+  background-color: var(--telegram-main);
+}
+
+.online-calls ul li:nth-child(3):hover {
+  background-color: var(--telegram-hover-dark);
+}
+
+.online-calls ul li:last-child {
+  margin-right: 0;
+}
+
+.online-calls ul li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.online-calls ul li img {
+  width: 1vw;
+}
+
+.work-times .telephone {
+  font-size: 1.25vw;
+  margin: 0.5vw 0;
+  text-decoration: none;
+  color: var(--text-dark);
+  display: block;
+}
+
+.work-times .telephone:hover {
+  color: hsl(0, 0%, 31%);
+}
+
+.work-times span[role="button"] {
+  text-decoration: none;
+  color: var(--green-bg-main);
+  border-bottom: 0.15vw dotted var(--green-bg-main);
+  letter-spacing: 0.01vw;
+  font-weight: 600;
+  transition: color border-bottom 250ms ease;
+  cursor: pointer;
+}
+
+.work-times span[role="button"]:hover {
+  color: var(--green-hover-dark);
+  border-bottom: 0.15vw dotted var(--green-hover-dark);
+}
+
+/* Основной контент */
+
+.main-content {
+  display: flex;
+}
+
+/* Боковая стойка */
+
+.bullets-wrapper {
+  width: 19.5vw;
+  height: 40.5vw;
+  background-image: url("/src/images/Форма.png");
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-left: -4vw;
+  background-clip: border-box;
+  margin-top: -1.5vw;
+}
+
+.bullets {
+  padding: 5vw 3.5vw 0 3.5vw;
+  text-align: center;
+  font-size: 0.75vw;
+}
+
+.bullets div {
+  box-sizing: border-box;
+  padding: 0vw 2vw 3.25vw 2vw;
+  background-image: url("/src/images/menu_shadow\ 2.png");
+  background-position: bottom center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.bullets div:first-child {
+  margin-top: 1.5vw;
+}
+
+.bullets div:last-child {
+  background: none;
+  padding-bottom: 0;
+}
+
+/* Главная область */
+
+/* Заголовки */
+
+.root-header {
+  width: 37.5vw;
+}
+
+.root-header h1 {
+  padding-top: 2vw;
+  font-size: 3vw;
+  font-weight: 300;
+  line-height: 4.25vw;
+  margin-bottom: 1vw;
+}
+
+.root-header p {
+  margin-top: 0;
+  font-size: 1.75vw;
+  padding-left: 3.5vw;
+  position: relative;
+}
+
+.root-header .circles {
+  position: absolute;
+  left: 0;
+  top: -0.07vw;
+}
+
+.root-header .circles span {
+  display: inline-block;
+  border: 0.15vw solid var(--green-bg-main);
+  border-radius: 100%;
+  width: 0.15vw;
+  height: 0.15vw;
+  margin-right: -0.07vw;
+}
+
+.root-header .circles span:nth-child(2) {
+  border-color: var(--green-bg-main-75);
+}
+
+.root-header .circles span:nth-child(3) {
+  border-color: var(--green-bg-main-50);
+}
+
+.root-header .circles span:nth-child(4) {
+  border-color: var(--green-bg-main-25);
+}
+
+.registration {
+  margin-top: 2.5vw;
+  display: flex;
+}
+
+/* Кнопки записи [определение и слили для блока] */
+
+.big-button {
+  padding: 1.7vw;
+  border-radius: 4vw;
+  color: var(--white);
+  font-size: 0.75vw;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 250ms ease;
+}
+
+.big-button .arrow-icon {
+  position: relative;
+  display: inline-block;
+  transition: margin-right 250ms ease;
+}
+
+.big-button .arrow-icon svg:nth-child(1) {
+  width: 1.25vw;
+  height: 1.25vw;
+}
+
+.big-button .arrow-icon svg:nth-child(2) {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0.75vw;
+  height: 0.75vw;
+}
+
+.big-button:hover .arrow-icon {
+  margin-right: 0.25vw;
+}
+
+.green-style {
+  background-color: var(--green-bg-main);
+  margin-right: 1.5vw;
+}
+
+.green-style:hover {
+  background-color: #21e27c;
+}
+
+.root-header .green-style {
+  width: 23vw;
+}
+
+.orange-style {
+  background-color: var(--orange-bg-main);
+}
+
+.orange-style:hover {
+  background-color: #fd9c49;
+}
+
+.root-header .orange-style {
+  width: 18vw;
+}
+
+/* Блок по "Несколько вопросов" */
+
+.several-questions {
+  margin-top: 1.5vw;
+  width: 15vw;
+}
+
+/* Пульсар под пальцем */
+
+.root-header .several-questions > span {
+  position: relative;
+}
+
+.root-header .several-questions > span::before {
+  position: absolute;
+  content: "";
+  display: block;
+  background-color: var(--orange-bg-main);
+  border: 0.15vw solid hsl(28, 73%, 87%);
+  border-radius: 100%;
+  width: 0.25vw;
+  height: 0.25vw;
+  right: 1vw;
+}
+
+.root-header .several-questions img {
+  float: left;
+  position: relative;
+  width: 1.5vw;
+}
+
+.root-header .several-questions p {
+  font-size: 0.75vw;
+  text-align: center;
+  padding-left: 2vw;
+  line-height: 1.2vw;
+}
+
+/* Pop-up windows */
+
+.dn {
+  display: none;
+}
+
+.hide {
+  transition: opacity 150ms ease;
+}
+
+.show {
+  opacity: 3 !important;
+  z-index: 3 !important;
+  transition: opacity 150ms ease !important;
+}
+
+/* Pop-up window "Call me!" */
+/* Pop-up window "Success add" */
+
+.call-me-pop-up,
+.success-add-pop-up {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: calc(100vw * (9 / 16));
+  background-color: hsla(0, 0%, 11%, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 150ms ease;
+  /* windows always hide */
+  opacity: 0;
+  z-index: -3000;
+}
+
+.pop-up-window,
+.success-add {
+  box-sizing: border-box;
+  background-color: var(--white);
+  margin-top: -10vw;
+  width: 29vw;
+  border-radius: 2vw;
+  background-image: url("/src/images/Плашка.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  padding: 2.5vw 6vw;
+  position: relative;
+}
+
+.pop-up-window .close-btn,
+.success-add .close-btn {
+  position: absolute;
+  top: 2vw;
+  right: 2vw;
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  line-height: 0;
+  width: 1vw;
+  height: 1vw;
+  font-size: 1vw;
+}
+
+.pop-up-window .close-btn img,
+.success-add .close-btn img {
+  width: 1vw;
+  height: 1vw;
+  line-height: 0;
+  transition: transform 250ms ease;
+}
+
+.pop-up-window .close-btn img:hover,
+.success-add .close-btn img:hover {
+  transform: rotate(180deg);
+}
+
+.pop-up-window header,
+.success-add header {
+  text-align: center;
+  font-size: 0.8vw;
+  line-height: 1.2vw;
+}
+
+.pop-up-window header h2,
+.success-add header h2 {
+  font-weight: 500;
+  font-size: 1.5vw;
+}
+
+.pop-up-window header p,
+.success-add header p {
+  font-weight: 400;
+}
+
+.pop-up-window header small {
+  font-weight: 400;
+  font-size: 0.7vw;
+}
+
+.pop-up-window input.big-button,
+.pop-up-window button.big-button {
+  border: none;
+}
+
+.pop-up-window form {
+  margin-top: 1vw;
+  font-size: 0.8vw;
+}
+
+.pop-up-window form fieldset {
+  margin: 1vw 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.pop-up-window label[for="input-phone"] {
+  margin-bottom: 0.5vw;
+  margin-left: 2vw;
+}
+
+.pop-up-window label[for="input-phone"],
+.pop-up-window label[for="check-politics"] {
+  cursor: pointer;
+  font-size: 0.7vw;
+}
+
+.pop-up-window label[for="check-politics"] a {
+  color: var(--orange-bg-main);
+  text-decoration: none;
+  transition: color 250ms ease;
+}
+.pop-up-window label[for="check-politics"] a:hover {
+  color: var(--text-hover-light);
+}
+
+.pop-up-window input[name="phone"] {
+  box-shadow: 0 0 1vw rgba(0, 0, 0, 0.05);
+  color: var(--text-hover-light);
+  font-size: 1vw;
+  transition: box-shadow 250ms ease;
+  text-align: initial;
+  cursor: text;
+}
+
+.pop-up-window input[name="phone"]:hover {
+  box-shadow: 0 0 1vw rgba(0, 0, 0, 0.2);
+}
+
+.pop-up-window input[name="phone"]:focus,
+.pop-up-window input[name="phone"]:focus-visible,
+.pop-up-window input[name="phone"]:active {
+  box-shadow: 0 0 1vw rgba(0, 0, 0, 0.5);
+  border: none;
+  outline: none;
+}
+
+.pop-up-window .big-button.orange-style {
+  padding-left: 4vw;
+  padding-right: 4vw;
+  justify-content: space-between;
+}
+
+.pop-up-window .big-button[disabled] {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.pop-up-window .big-button.orange-style .arrow-icon {
+  transform: rotate(45deg);
+}
+
+.checkbox {
+  cursor: pointer;
+  position: relative;
+}
+
+fieldset.checkbox {
+  flex-direction: initial !important;
+}
+
+.checkbox > input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  outline: none;
+  height: 1vw;
+  width: 1.25vw;
+  margin: 0 1vw 0 0;
+  display: block;
+  border-radius: 0.25vw;
+  background-color: var(--orange-bg-main);
+  cursor: pointer;
+}
+
+.checkbox > input:checked {
+  background-color: #fd9c49;
+}
+
+.checkbox > input:checked:before {
+  content: "";
+  background-image: url("/src/images/Галочка.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 50% 50%;
+  display: block;
+  position: absolute;
+  box-sizing: border-box;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 1.12vw;
+  height: 1vw;
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+  font-size: 1vw;
+}
